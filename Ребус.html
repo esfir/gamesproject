@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"> 
+    
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    
+    <link type="text/css" href="jquery-ui.min.css" rel="Stylesheet" />
+
+    <style>
+
+        #table{
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            margin-top: 100px;
+            border: 1px solid white;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        #check{
+            width: 500px;
+            height: 35px;
+            border: 1px solid white;
+            background-color: white;
+            text-align: center;
+            margin: auto;
+            margin-top: 0px;
+        }
+
+        #change{
+            width: 800px;
+            height: 50px;
+            margin: auto;
+            margin-top: -320px;
+        }
+
+
+
+        #back{
+            margin-top:15px;
+            float:left;
+            cursor: pointer;
+        }
+        .backImg{
+            width: 110px;
+            height: 50px;
+
+        }
+
+
+
+
+        #next{
+            margin-top:15px;
+            float:right;
+            cursor: pointer;
+        }
+        
+        .nextImg{
+            width: 110px;
+            height: 50px;
+        }
+
+
+
+
+
+        #counter{
+            width: 500px;
+            height: 10px;
+            text-align: center;
+            font-size: 40px;
+            padding-left: 50px;
+            background: white;
+            margin: auto;
+            margin-top: -360px;
+        }
+
+        .pickcher{
+            width: 500px;
+            height: 500px;
+        }
+
+        #input{
+            z-index: -1;
+            width: 220px;
+            height: 25px; 
+            margin-left: 50px;
+        }
+
+        #button{
+            width: 80px;
+            height: 30px; 
+            margin-left: 40px;
+            cursor: pointer;
+        }
+
+
+
+        #backRedImg{
+            display: none;
+        }
+        
+        #nextRedImg{
+            display: none;
+        }
+
+        .bigNumber{
+            color: green;
+            font-size: 45px;
+        }
+
+
+        .hide{
+            display: none;
+        }
+
+
+        .correct{
+            width: 500px;
+            height: 100px;
+            border: 2px solid green;
+            background-color: rgb(157, 226, 150);
+            border-radius: 40px;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+            margin-top:600px;
+            font-size: 50px;
+        }
+
+        
+
+        .uncorrect{
+            width: 500px;
+            height: 100px;
+            border: 2px solid red;
+            background-color: rgb(241, 129, 114);
+            border-radius: 40px;
+            margin: auto;
+            margin-top:600px;
+            text-align: center;
+            padding-top: 50px;
+            font-size: 50px;
+        }
+        
+        .yellowNumber{
+            color: greenyellow;
+        }
+
+        #all{
+            display: block;
+        }    
+
+        
+
+
+
+        #info{
+            display: none;
+            width: 450px;
+            height: 600px;
+            margin: auto;
+            margin-top: 100px;
+            border:5px solid darkblue;
+            background-color: rgb(241, 211, 247);
+	        box-shadow: 0 0 80px rgb(10, 12, 138);
+            border-radius: 50px;
+        }
+
+        #pozdravlyaem{
+            width: 380px;
+            height: 70px;
+            font-size: 55px;
+            margin:auto;
+            margin-top:110px;
+            color: rgb(199, 32, 32);
+            text-align: center;
+        }
+
+        #rebusProiden{
+            width: 380px;
+            height: 70px;
+            font-size: 60px;
+            font-family: 'Share Tech Mono', monospace;
+            text-align: center;
+            color: rgb(59, 180, 29);
+            margin: auto;
+            margin-top:50px;
+        }
+        #backToMenu{
+            width: 380px;
+            height: 70px;
+            text-align: center;
+            font-size: 40px;
+            border: 2px solid darkblue;
+            background-color: rgb(123, 123, 204);
+            font-family: 'Share Tech Mono', monospace;
+            border-radius: 30px;
+            margin: auto;
+            margin-top:180px;
+        }
+
+        .showShadow{
+            box-shadow: 0 0 50px  rgb(0, 47, 255);
+            cursor: pointer;
+        }
+
+
+
+        #pause{
+            display: none;
+            width: 450px;
+            height: 600px;
+            margin: auto;
+            margin-top: 100px;
+            border:5px solid darkblue;
+            background-color: rgb(220, 194, 226);
+	        box-shadow: 0 0 80px rgb(18, 20, 107);
+            border-radius: 50px;
+        }
+
+        #continue{
+            width: 380px;
+            height: 70px;
+            text-align: center;
+            font-size: 40px;
+            border: 2px solid rgb(43, 0, 141);
+            background-color: rgb(117, 192, 142);
+            font-family: 'Share Tech Mono', monospace;
+            border-radius: 30px;
+            margin: auto;
+            margin-top:130px;
+            cursor: pointer;
+        }    
+
+
+
+    </style>
+
+</head>
+<body>
+    <div id ="all">
+        <div id ='top'>
+            <div id ='table'>
+                <img class ='pickcher' src ="стул.png">
+                <img class ='pickcher' src ="улица.png">
+                <img class ='pickcher' src ="коробка.png">
+                <img class ='pickcher' src ="карта.png">
+                <img class ='pickcher' src ="стакан.png">
+                <img class ='pickcher' src ="подарок.png">
+                <img class ='pickcher' src ="дорога.png">
+                <img class ='pickcher' src ="вода.png">
+                <img class ='pickcher' src ="озеро.png">
+                <img class ='pickcher' src ="моряк.png">
+            </div>
+        </div>
+
+        <div id ='check'>
+            <input id ='input' type ="text"> <button id ='button'>Проверить</button>
+        </div> 
+
+        <div id='change'>
+            <div id ='back'> <img class ="backImg" id ='backBlackImg' src="влевоЧр.png"> <img class ="backImg" id ='backRedImg' src="влевоКр.png"> </div>
+            <div id ='next'> <img class ="nextImg" id ='nextBlackImg' src="вправоЧр.png"> <img class ="nextImg" id ='nextRedImg' src="вправоКр.png"> </div>
+        </div>
+
+
+        <div id ='counter'>
+            <p> 
+                <span class ='number'>1</span> 
+                <span class ='number'>2</span> 
+                <span class ='number'>3</span> 
+                <span class ='number'>4</span> 
+                <span class ='number'>5</span> 
+                <span class ='number'>6</span> 
+                <span class ='number'>7</span> 
+                <span class ='number'>8</span> 
+                <span class ='number'>9</span> 
+                <span class ='number'>10</span> 
+            </p>
+        </div>
+
+
+        <div class = 'result'></div>
+    </div>
+
+    <div id ='openWindow'>
+        <div id ="info">
+            <p id ="pozdravlyaem">Поздравляем !</p>
+            <p id ='rebusProiden'>Ребус пройден</p>
+            <a href ="index.html"><div id ='backToMenu'><b> ⬅ Главное меню</b></div></a>
+        </div>
+    </div>
+    
+    <div id ='pause'>
+        <p id ="continue"> Продолжить ➤</p>
+        <a href ="index.html"><div id ='backToMenu'><b> ⬅ Главное меню</b></div></a>
+    </div>
+    
+    
+    
+    <script>
+
+//---------------- Изменение цвета стрелок ---------------   
+        $('#back').on('mouseover', function(){
+            $('#backBlackImg').css('display', 'none');
+            $('#backRedImg').css('display', 'block');
+        });
+
+        $('#back').on('mouseout', function(){
+            $('#backBlackImg').css('display', 'block');
+            $('#backRedImg').css('display', 'none');
+        });
+
+
+
+        $('#next').on('mouseover', function(){
+            $('#nextBlackImg').css('display', 'none');
+            $('#nextRedImg').css('display', 'block');
+        });
+
+        $('#next').on('mouseout', function(){
+            $('#nextBlackImg').css('display', 'block');
+            $('#nextRedImg').css('display', 'none');
+        });
+//---------------------------------------------------------         
+
+
+
+//--------------- Начальная позиция------------------------
+
+        let place = 0;
+        var correctWord; 
+        var $pickcher;
+
+        $('.pickcher').each(function(){
+            $(this).addClass('hide');
+        })
+
+        $('.pickcher').eq(place).removeClass('hide');
+        $('pause').addClass('hide');
+        $('.number').eq(place).addClass('bigNumber');
+
+
+//----------------------------------------------------------
+
+        
+//------------- Перелистывание картинок--------------------- 
+
+        $('#next').on('click', function(){
+            if(place !== 9){
+                changePickcher(place, true);
+                hideResult();
+                place++;
+            }
+        });
+
+
+        $('#back').on('click', function(){
+            if(place !==0){
+                changePickcher(place, false);
+                hideResult();
+                place--;
+            }
+        });
+
+
+        function changePickcher(now, plus){
+            let after = 0;
+            $('#check').removeClass('hide');
+            if(plus == true){
+                after = now+1;
+            } else {
+                after = now-1;
+            }
+            $('.pickcher').eq(now).addClass('hide');
+            $('.number').eq(now).removeClass('bigNumber')
+            
+            $('.pickcher').eq(after).removeClass('hide');
+            $('.number').eq(after).addClass('bigNumber');
+        }
+
+
+        function hideResult(){
+            $('.result').html('');
+            $('.result').removeClass('correct');
+            $('.result').removeClass('uncorrect');
+            $('#input').val('');
+            let $nowElem;
+
+            $('.pickcher').each(function(){
+                if($(this).hasClass('hide')){
+                } else {
+                    $nowElem = $(this);
+                }
+            })
+
+            if($nowElem.hasClass('done')){
+                console.log('done');
+                createCorrect();
+            }
+        }
+//----------------------------------------------------------
+
+
+        $('#button').on('click', function(){
+            
+
+            $('.pickcher').each(function(){
+                if($(this).hasClass('hide')){
+                } else {
+                    correctWord = $(this).attr('src');
+                    $pickcher = $(this);
+                    console.log(correctWord);
+                }
+            })
+
+            let word = $('#input').val();
+
+
+            //Значение не может быть пустым
+            if(word.length <= 1){
+                alert('Значение не может быть пустым');
+                $('#input').val('');
+                word = $('#input').val('');
+            }
+
+            //Значение не может быть содержать цифры
+            else if (/\d+/.test(word)){
+                alert('Значение не может быть содержать цифры');
+                $('#input').val('');
+                word = $('#input').val('');
+            } else {
+                word+= '.png';
+            }
+            if(word.length != 1){
+                if(word.toLowerCase() == correctWord){
+                    createCorrect();
+                    $('.number').eq(place).addClass('yellowNumber');
+                } else {
+                    createUncorrect();
+                }
+            }
+        })
+
+        function createCorrect(){
+            checkWin();
+            $('.result').html('');
+            $('.result').css({display: 'none'});
+            $('.result').removeClass('uncorrect');
+            $('.result').append('<div>ПРАВИЛЬНО✔</div>');
+            $('.result').addClass('correct');
+            $('.result').effect('blind',{mode: 'show'},500);
+            $pickcher.addClass('done');
+            $('#check').addClass('hide');
+        }
+
+        function createUncorrect(){
+            $pickcher.effect('bounce',{direction: 'left', distance: '40'},800);
+            $('.result').html('');
+            $('.result').css({display: 'none'});
+            $('.result').removeClass('correct');
+            $('.result').append('<div>НЕ ВЕРНО❌</div>');
+            $('.result').addClass('uncorrect');
+            $('.result').effect('blind',{mode: 'show'},500);
+        }
+
+
+        function checkWin(){
+            let count = 1;
+            console.log($('.pickcher').length)
+            $('.number').each(function(){
+                $elem = $(this);
+                if($(this).hasClass('yellowNumber')){
+                    count+=1;
+                    console.log(true);
+                }
+            })
+            console.log(count);
+            if(count == $('.pickcher').length){
+                openWindow();
+                console.log('win');
+            }
+        }
+
+        function openWindow(){
+            $('#all').css({display: 'none'});
+            $('body').css({backgroundColor: 'rgb(29, 29, 29)'});
+            $('#info').effect('blind',{mode: 'show', direction: 'left'},500);
+            $('#backToMenu').on('mouseover',function(){
+                $('#backToMenu').addClass('showShadow');
+            })
+            $('#backToMenu').on('mouseout',function(){
+                $('#backToMenu').removeClass('showShadow');
+            })
+        }
+
+        document.addEventListener('keydown',function(event){
+            if(event.code == "Escape"){
+                pause();
+            }
+        })
+
+        function pause(){
+            $('#all').css({display: 'none'});
+            $('#pause').css({display: 'block'});
+
+            $('body').css({backgroundColor: 'rgb(29, 29, 29)'});
+            
+            $('#backToMenu').on('mouseover',function(){
+                $('#backToMenu').addClass('showShadow');
+            })
+            $('#backToMenu').on('mouseout',function(){
+                $('#backToMenu').removeClass('showShadow');
+            })
+
+            $('#continue').on('mouseover',function(){
+                $('#continue').addClass('showShadow');
+            })
+            $('#continue').on('mouseout',function(){
+                $('#continue').removeClass('showShadow');
+            })
+
+            $('#continue').on('click', function(){
+                console.log('true')
+                $('#all').css({display: 'block'});
+                $('body').css({backgroundColor: 'white'});
+                $('#pause').css({display: 'none'});
+            })
+        }
+
+
+
+    </script>
+     
+</body>

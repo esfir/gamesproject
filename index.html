@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"> 
+    
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    
+    <link type="text/css" href="jquery-ui.min.css" rel="Stylesheet" />
+
+    <style>
+
+
+        body{
+            background-color: rgb(29, 29, 29);
+        }
+
+        #menu{
+            width: 1400px;
+            height: 700px;
+            margin: auto;
+            margin-top: 200px;
+        }
+        
+        .name{
+            width: 300px;
+            height: 100px;
+            margin: auto;
+            margin-top: 170px;
+            text-align: center;
+            font-size: 60px;
+            color: black;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+
+        #firstGame{
+            width: 400px;
+            height: 500px;
+            border: 10px solid darkblue;
+            background-color: rgba(217, 177, 221, 0.986);
+            border-radius: 50px;  
+            float:left;
+            margin-top: 50px;
+            margin-left: 150px;
+        }
+
+        .changeFirstPosition{
+            margin-right: 75px;
+            margin-top: 70px;
+            font-size: 70px;
+        }
+        
+
+        #secondGame{
+            width: 400px;
+            height: 500px;
+            border: 10px solid darkblue;
+            background-color: rgba(217, 177, 221, 0.986); 
+            border-radius: 50px;  
+            float:right;
+            margin-top: 50px;
+            margin-right: 150px;
+        }
+
+        .changeSecondPosition{
+            margin-left: -50px;
+            margin-top: 70px;
+            font-size: 70px;
+        }
+
+
+        .largeSize{
+            padding-left: 100px;
+            padding-top: 100px;
+            box-shadow: 0 0 75px rgb(10, 12, 138);
+            cursor: pointer;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+        <div id ='menu'>
+            <a href ="виселица.html"> <div id ='firstGame' class ='games'> <p id ='firstName' class ='name first'>Виселица</p></div> </a>
+            <a href ="Ребус.html"> <div id ='secondGame' class ='games'> <p id ='secondName' class ='name second'>Ребус</p></div> </a>
+        </div>
+        
+
+
+
+    <script>
+
+        $('.games').on('mouseover', function(){
+            $(this).addClass('largeSize');
+            if($(this).children().hasClass('first')){
+                $(this).children().addClass('changeFirstPosition');
+            } else {
+                $(this).children().addClass('changeSecondPosition');
+            }
+            
+        }) 
+        
+        $('.games').on('mouseout', function(){
+            $(this).removeClass('largeSize');
+            if($(this).children().hasClass('first')){
+                $(this).children().removeClass('changeFirstPosition');
+            } else {
+                $(this).children().removeClass('changeSecondPosition');
+            }
+        })    
+
+
+
+    </script>
+     
+</body>
